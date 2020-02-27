@@ -43,7 +43,6 @@ public class App {
         System.out.print("Son da Pregiça: ");
         preguica.pegarSon(sc.nextLine());
 
-
         System.out.println(" ");
         veterinario.examinar(cachorro);
         veterinario.examinar(cavalo);
@@ -51,26 +50,31 @@ public class App {
 
         System.out.println(cachorro);
 
-        int opcao = 10;
+        int opcao = 0;
+        int contador = 0;
         System.out.println("Para locar o animal na Jaula digite o número refernte!");
-        while(opcao != 0){
+        while(contador < 10){
 
-            System.out.println("------------+");
-            System.out.println("0 Sair:     |");
-            System.out.println("1 Cachorro: |");
-            System.out.println("2 Cavalo:   |");
-            System.out.println("3 Preguiça: |");
-            System.out.print("------------+ ");
+            System.out.println("-------------+");
+            System.out.printf("%d Quantidade |%n", (contador + 1));
+            System.out.println("0 Sair:      |");
+            System.out.println("1 Cachorro:  |");
+            System.out.println("2 Cavalo:    |");
+            System.out.println("3 Preguiça:  |");
+            System.out.print("--------------+ ");
             opcao = sc.nextInt();
             
             if(opcao == 1){
                 jaulas.colocarAnimalNaJaula(cachorro);
+                contador++;
             }
             else if (opcao == 2) {
                 jaulas.colocarAnimalNaJaula(cavalo);
+                contador++;
             } 
             else if (opcao == 3) {
                 jaulas.colocarAnimalNaJaula(preguica);
+                contador++;
             } 
             else if (opcao == 0) {
                 break;
@@ -81,7 +85,6 @@ public class App {
         }
 
         jaulas.mostraJaulas();
-
         sc.close();
     }
 }
